@@ -1,0 +1,6 @@
+Google
+Microsoft
+IBM
+Infosys
+Wipro
+Capgemini

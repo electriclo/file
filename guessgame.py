@@ -1,0 +1,55 @@
+import random
+
+num = 0
+playing = True
+
+def difficulty():
+
+    difficulty = input("Type easy (easy), medium (medium), or hard (hard) to choose a difficulty: ")
+    global num
+
+    if difficulty == "easy":
+        num = random.randint(1, 20)
+    elif difficulty == "medium":
+        num = random.randint(1, 50)
+    elif difficulty == "hard":
+        num = random.randint(1, 100)
+    else:
+        print("Only choose easy, medium, or hard.")
+        difficulty()
+
+def ask_play_again():
+    option = input("Type Y to play again, any other key to exit: ")
+    if option != "Y":
+        global playing
+        playing = False
+
+def ask_for_guess():
+    try:
+        guess = int(input("Guess a number: "))
+    except:
+        print("Choose a number.")
+        ask_for_guess()
+
+    if guess < num:
+        print("too low")
+        ask_for_guess()
+    elif guess > num:
+        print("too high")
+        ask_for_guess()
+    else:
+        print("correct")
+
+while playing:
+    difficulty()
+    ask_for_guess()
+    ask_play_again()
+
+        
+
+
+
+
+
+
+
